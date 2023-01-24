@@ -14,7 +14,7 @@ public class Calculadora{
         do{
             operandos = menu.pedirNumeros();
             operacion = menu.menuOpciones();
-            
+            try {
             if (operacion.equalsIgnoreCase("+")){
                 resultado = operaciones.sumar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
@@ -31,7 +31,11 @@ public class Calculadora{
                 resultado = operaciones.resto(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
             } else {
-                System.out.println ("Operaci�n no v�lida");
+                System.out.println ("Operación no válida");
+            }
+            }catch(ArithmeticException excepcion) {
+            	System.out.println ("Error aritmetico "+ excepcion.getMessage());
+            	System.out.println ("Operación no válida");
             }
         }   while (menu.repetir());
     }
