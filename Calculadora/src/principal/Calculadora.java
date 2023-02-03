@@ -25,16 +25,16 @@ public class Calculadora {
 		Handler consoleHandler = null;
 		Handler fileHandler = null;
 		try {
-			// Crear consoleHandler y fileHandler
+			/*Creamos el CONSOLEHANDLER y EL FILE HANDLER*/
 			consoleHandler = new ConsoleHandler();
 			fileHandler = new FileHandler("./operaciones.log");
 			
-			// Asignar handlers al objeto LOGGER
+			/*Asignamos unos handles al OBJETO*/
 			LOGGER.setUseParentHandlers(false);
 			LOGGER.addHandler(consoleHandler);
 			LOGGER.addHandler(fileHandler);
-			
-			// Establecer niveles a handlers y LOGGER
+
+			/*Establecemos NIVELES a los HANDLERS y A LOS LOGGERS*/
 			consoleHandler.setLevel(Level.WARNING);
 			fileHandler.setLevel(Level.ALL);
 			LOGGER.setLevel(Level.ALL);
